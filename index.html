@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="verzeo major project">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="krishna vamsi,yaswanth">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Nerko One' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>House Decor</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            
+        }
+        body{
+            margin: 0;
+            user-select: none;
+        }
+        #main{
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: hidden;
+        }
+        header{
+            position: fixed;
+            width: 100%;
+            height: 50px;
+            top: 0;
+            padding-top: 3.5px;
+            z-index: 1;
+            background: #eee;
+        }
+        #logo{
+            position: absolute;
+            top: 3.5px;
+            left: 10px;
+        }
+       header span{
+           position: absolute;
+           font-size: 30px;
+           left: 50px;
+           color: #cd6133;
+           padding-top: 2px;
+           font-family: 'Nerko One';
+       }
+       #home{
+           position: relative;
+           min-width: 100%;
+           min-height: 100vh; 
+       }
+       #intro{
+           position: relative;
+           width: 100%;
+           height: 100vh;
+           background: url('main.jpg');
+           background-size: cover;
+           margin-bottom: 50px;
+       }
+       #det{
+           position: absolute;
+           width: 500px;
+           top: 150px;
+           right: 50px;
+           font-family: 'Oswald';
+           text-shadow: 0 0 5px #777;
+       }
+       #det h1{
+           margin-block-end: 0;
+           font-size: 3vmax;
+       }
+       #det p{
+           font-size: 2vmax;
+           margin-block-start: 10px;
+       }
+       #home form{
+           position: absolute;
+           top: 120px;
+           left: 40px;
+           width: 350px;
+           height: 450px;
+           background: rgba(255, 255, 255, 0.8);
+           border-radius: 10px;
+           text-align: center;
+           box-shadow: 0 0 5px #666;
+       }
+       #home form p{
+           font-size: 2.1vmax;
+           font-weight: 900;
+           color:  #cd6133;
+           margin-block-end: 10px;
+       }
+       #home form input{
+           border: none;
+           border-bottom: 1px solid #aaa;
+           background: rgba(255, 255, 255, 0);
+           width: 88%;
+           margin: 10px 0;
+           padding: 11px;
+           font-size: 1.2vmax;
+       }
+       #home form #send{
+           border: none;
+           background: #cd6133;
+           margin-top: 20px;
+           padding: 15px;
+           width: 92%;
+           border-radius: 10px;
+           font-size: 1.5vmax;
+       }
+       ::placeholder {
+            color: #888;
+        }
+        #home form div{
+            color: #888;
+            font-size: 1vmax;
+            padding: 0 20px;
+            text-align: left;
+        }
+        header nav{
+            position: absolute;
+            padding: 8px 0;
+            width: 100%;
+        }
+        header nav ul{
+            position: absolute;
+            left: 270px;
+            top: 5px;
+            margin: 0;
+            list-style-type: none;
+        }
+        header nav ul li{
+            float: left;
+            margin: 0 12px;
+        }
+        header nav ul li a{
+            text-decoration: none;
+            color: #555;
+            font-size: 1.7vmax;
+            padding: 10px 0;
+        }
+        header nav ul li a:hover{
+            background: #ddd;
+        }
+        header nav input{
+            position: absolute;
+            right: 5px;
+            border: 1px solid #ccc;
+            padding: 3px 7px;
+            font-size: 1.2vmax;
+            border-radius: 10px;
+            width: 200px;
+        }
+        #container1 {
+            position: relative;
+            width: 100%;
+            min-height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 80px 0 50px 0;
+            margin-top: 50px;
+        }
+        #container1 div{
+            margin: 20px 25px;
+            text-align: center;
+        }
+        #container1 div img{
+            width: 200px;
+            height: 200px;
+        }
+        #container1 h1{
+            position: absolute;
+            text-align: center;
+            top: 0px;
+        }
+        #container1 div p{
+            width: 200px;
+            font-size: 1.7vmax;
+        }
+        #container2{
+            position: relative;
+            width: 100%;
+            min-height: 300px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 60px;
+        }
+        #container2 h1{
+            position: absolute;
+            text-align: center;
+            top: 0px;
+            margin-block-start: 0;
+        }
+        #container2 div{
+            position: relative;
+            width: 250px;
+            height: 150px;
+            background: #fff;
+            box-shadow: 0 0 20px #aaa;
+            margin: 20px 15px;
+            padding: 0 5px;
+        }
+        #container2 div img{
+            position: absolute;
+            top: 30px;
+        }
+        #container2 div p{
+            position: absolute;
+            right: 0px;
+            font-size: 15px;
+            width: 60%;
+            font-family:'MyWebfont', georgia, serif; 
+            line-height: 26px;
+        }
+        #container3{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            min-height: 300px;
+        }
+        #container3 p{
+            width: 60%;
+            font-size: 1.7vmax;
+        }
+        footer{
+            position: relative;
+            width: 100%;
+            min-height: 450px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            text-shadow: 0 0 4px #000;
+        }
+        footer #back{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url('f1.jpg');
+            background-size: cover;
+            background-position: 20% 100%;
+            z-index: -1;
+            filter: blur(5px);
+        }
+        #box1{
+            position: absolute;
+            width: 50%;
+            left: 0;
+            height: 100%;
+            padding-top: 10px;
+            padding-right: 200px;
+            text-align: center;
+        }
+        #box1 p{
+            font-size: 1.3vmax;
+            color: #ddd;
+        }
+        #box2{
+            position: absolute;
+            width: 50%;
+            right: 0;
+        }
+        footer #logo{
+            position: static;
+            text-shadow: none;
+        }
+        footer #logo span{
+            font-size: 50px;
+            font-family: 'Nerko One';
+            color: #cd6133;
+        }
+        footer #logo svg{
+            transform: translateY(15%);
+        }
+        footer #links{
+            position: absolute;
+            top: 90px;
+            left: -200px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        footer #links a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.6vmax;
+            margin: 10px 30px;
+            text-align: center;
+        }
+        footer #install{
+            position: absolute;
+            top: 160px;
+            text-align: center;
+        }
+        footer #install img{
+            margin: 5px 60px;
+        }
+        footer #install span{
+            margin: 10px 40px;
+            text-align: center;
+            font-size: 1.5vmax;
+        }
+        #living{
+            position: relative;
+            min-width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .sec{
+            width: 80%;
+            padding-top: 60px;
+        }
+        .livingpics{
+            position: relative;
+            width: 450px;
+            height: 400px;
+            margin: 0px;
+            box-shadow: 0 0 5px #555;
+            text-align: center;
+            font-size: 1.5vmax;
+            margin: 20px;
+            display: inline-block;
+        }
+        .img{
+            width: 450px;
+            height: 300px;
+        }
+        .caption{
+            margin-block-start: 10px;
+        }
+        .likes{
+            background: #3498db;
+            padding: 7.5px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 100px;
+            height: 30px;
+            font-size: 15px;
+            border-radius: 5px;
+        }
+        .heart{
+            fill: #fff;
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+            width: 35px;
+            background: #aaa;
+            padding: 5px;
+            border-radius: 50%;
+        }
+        .ads{
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            width: 20%;
+            height: 95%;
+            text-align: center;
+            padding-top: 20px;
+            font-size: 1.5vmax;
+            color: #777;
+            box-shadow: 0 0 2px #555;
+            background-color: #ddd;
+        }
+        #bedroom{
+            position: relative;
+            min-width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #kitchen{
+            position: relative;
+            min-width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #toilets{
+            position: relative;
+            min-width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #child{
+            position: relative;
+            min-width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #pop{
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            position: fixed;
+            padding-top: 15px;
+            top: 20px;
+            left: 50%;
+            font-size: 1.5vmax;
+            background: pink;
+            transform: translateX(-50%);
+            z-index: 10;
+            visibility: hidden;
+            transition: all 0.5s;
+        }
+        input[type="text"], input[type="email"],input[type="submit"], input[type="tel"],input[type="search"], select { 
+            outline: none;
+        }
+        .close{
+            visibility: hidden;
+        }
+        @media screen and (max-width:800px){
+            header nav{
+                width: 50%;
+                height: 100vh;
+                left: 0;
+                top: 0;
+                background: #ddd;   
+                transform: translateX(-110%);
+            }
+            header nav ul{
+            top: 20px;
+            left: 0px;
+            margin: 0;
+            width: 100%;
+            text-align: center;
+            padding: 0;
+        }
+            header nav ul li{
+                float: none;
+                margin: 30px 0;
+            }
+            header nav ul li a{
+                font-size: 18px;
+            }
+            header nav input{
+            left: 5px;
+            padding: 8px 0;
+            text-align: center;
+            font-size: 1.4vmax;
+            border-radius: 10px;
+            width: 100px;
+            height: 25px;
+        }
+        #m{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 35px;
+            height: 25px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNTAiIGhlaWdodD0iNTAiCnZpZXdCb3g9IjAgMCAxNzIgMTcyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDE3MnYtMTcyaDE3MnYxNzJ6IiBmaWxsPSJub25lIj48L3BhdGg+PGcgZmlsbD0iI2IzMzkzOSI+PHBhdGggZD0iTTAsMzAuOTZ2Ni44OGgxNzJ2LTYuODh6TTAsODIuNTZ2Ni44OGgxNzJ2LTYuODh6TTAsMTM0LjE2djYuODhoMTcydi02Ljg4eiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+') 50% 50% no-repeat;
+            background-size: 100% 100%; 
+        }
+        #home form{
+           left: 50%;
+           transform: translate(-50%,-150%);
+           width: 300px;
+           height: 400px;
+           background: rgba(255, 255, 255, 1);
+       }
+       #home form p{
+           font-size: 20px;
+       }
+       #home form input{
+           padding: 8px;
+           font-size: 14px;
+       }
+       #home form #send{
+           font-size: 18px;
+       }
+        #home form div{
+            font-size: 10px;
+        }
+        #det{
+           width: 100%;
+           top: 100px;
+           left: 0px;
+           padding: 0 10px;
+       }
+       #det h1{
+           margin-block-end: 0;
+           font-size: 23px;
+       }
+       #det p{
+           font-size: 17px;
+           margin-block-start: 10px;
+       }
+       #container1 div p {
+            font-size: 16px;
+        }
+        #container3{
+            padding-top: 40px;
+        }
+        #container3 p {
+            width: 85%;
+            font-size: 18px;
+        }
+        .sec{
+            width: 100%;
+            padding-top:30px;
+        }
+        .livingpics{
+            width: 300px;
+            height: 340px;
+            font-size: 15px;
+            margin: 30px;
+            display: block;
+        }
+        .img{
+            width: 300px;
+            height: 250px;
+        }
+        .likes{
+            padding: 5px;
+            left: 5px;
+            width: 80px;
+            height: 25px;
+            font-size: 15px;
+        }
+        .heart{
+            bottom: 20px;
+            right: 10px;
+            width: 35px;
+        }
+        .ads{
+            visibility: hidden;
+        }
+        #pop{
+            font-size: 20px;
+        }
+        footer{
+            position: relative;
+            width: 100%;
+            min-height: 750px;
+            color: #fff;
+            padding: 0px;
+            text-shadow: 0 0 4px #000;
+        }
+        footer #back{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url('f1.jpg');
+            background-size: cover;
+            background-position: 20% 100%;
+            z-index: -1;
+            filter: blur(5px);
+        }
+        #box1{
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 350px;
+            height: auto;
+            padding-top: 10px;
+            padding-right: 0px;
+            text-align: center;
+        }
+        #box1 p{
+            font-size: 15px;
+        }
+        #box2{
+            width: 100%;
+            left: 0;
+        }
+        footer #logo{
+            margin-left: 30px;
+        }
+        footer #logo svg{
+            transform: translateY(15%);
+        }
+        footer #links{
+            position: absolute;
+            top: 70px;
+            left: 0;
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        footer #links a{
+            font-size: 18px;
+            margin: 10px 10px;
+            text-align: center;
+        }
+        footer #install{
+            position: absolute;
+            top: 150px;
+            text-align: center;
+        }
+        footer #install img{
+            margin: 10px 30px;
+        }
+        footer #install span{
+            margin: 10px 30px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .close{
+            visibility: visible;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+        #book{
+            position: absolute;
+            top: 400px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 250px;
+        }
+        #book::before{
+            position: absolute;
+            content: "Book our consultant";
+            text-align: center;
+            padding: 5px;
+            width: 250px;
+            font-size: 25px;
+            height: 30px;
+            border-radius: 6px;
+            box-shadow: 0 0 5px #666;
+            background: #cd6133;
+        }
+        }
+    </style>
+</head>
+<body>
+    <script src="js/jssor.slider-28.0.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.jssor_1_slider_init = function() {
+
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$,
+                $SpacingX: 10,
+                $SpacingY: 2
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*#region responsive code begin*/
+
+            var MAX_WIDTH = 550;
+
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };
+    </script>
+    <style>
+        /*jssor slider loading skin double-tail-spin css*/
+        .jssorl-004-double-tail-spin img {
+            animation-name: jssorl-004-double-tail-spin;
+            animation-duration: 1.6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes jssorl-004-double-tail-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /*jssor slider bullet skin 031 css*/
+        .jssorb031 {position:absolute;}
+        .jssorb031 .i {position:absolute;cursor:pointer;}
+        .jssorb031 .i .b {fill:#000;fill-opacity:0.6;stroke:#fff;stroke-width:1600;stroke-miterlimit:10;stroke-opacity:0.8;}
+        .jssorb031 .i:hover .b {fill:#fff;fill-opacity:1;stroke:#000;stroke-opacity:1;}
+        .jssorb031 .iav .b {fill:#fff;stroke:#000;stroke-width:1600;fill-opacity:.6;}
+        .jssorb031 .i.idn {opacity:.3;}
+
+        /*jssor slider arrow skin 051 css*/
+        .jssora051 {display:block;position:absolute;cursor:pointer;}
+        .jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+        .jssora051:hover {opacity:.8;}
+        .jssora051.jssora051dn {opacity:.5;}
+        .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+    </style>
+    <header id="a">
+        <div id="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="35" height="35"
+viewBox="0 0 50 50"
+style=" fill:#cd6133;"><path d="M12.52,6l10.4,15H3c-0.37,0-0.71-0.21-0.89-0.54c-0.17-0.33-0.14-0.72,0.07-1.03l9-13C11.36,6.16,11.67,6,12,6H12.52z M46.85,19.48l-8-13C38.67,6.18,38.35,6,38,6H14.99l10.39,15H46c0.36,0,0.7-0.2,0.87-0.51C47.05,20.17,47.04,19.78,46.85,19.48z M47,25v19c0,0.55-0.45,1-1,1H26c-0.55,0-1-0.45-1-1V25c0-0.55,0.45-1,1-1h20C46.55,24,47,24.45,47,25z M40,32h-8v6h8V32z M21,24H3 c-0.55,0-1,0.45-1,1v19c0,0.55,0.45,1,1,1h6V32h6v13h6c0.55,0,1-0.45,1-1V25C22,24.45,21.55,24,21,24z"></path></svg>
+        </div><span>House decor</span>
+        <div id="m"></div>
+        <nav id="navbar">
+            <img class="close" id="close" src="https://img.icons8.com/windows/20/000000/macos-close.png"/>
+            <ul>
+                <li><a class="nav" href="#home">Design gallery</a></li>
+                <li><a class="nav" href="#bedroom">Bedroom</a></li>
+                <li><a class="nav" href="#living">Living room</a></li>
+                <li><a class="nav" href="#kitchen">Kitchen</a></li>
+                <li><a class="nav" href="#toilets">Bathroom</a></li>
+                <li><a class="nav" href="#child">Kids</a></li>
+                <li><a href="" style="color: #cd6133;">login/sign up</a></li>
+            </ul>
+            <input type="search" placeholder="search for designs">
+        </nav>
+    </header>
+    <div id="main">
+    <div id="home">
+        <div id="intro">
+        <div id="det">
+            <h1>House Interior Design</h1>
+            <p>Looking for home interior designs. Find a best design from our gallery or discuss with our dedicated design expert.</p>
+        </div>
+        <div id="book"></div>
+        <form id="fm" method="POST" action="insert.php">
+            <img class="close" id="n" src="https://img.icons8.com/windows/20/000000/macos-close.png"/>
+            <p>Meet our designer online</p>
+            <input type="text"name="name" id="name" placeholder="Enter your full name" required>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+            <input type="tel" name="mobile" id="mobile" placeholder="Enter your mobile number" pattern="[0-9]{10}" required>
+            <input type="tel" name="code" id="code" placeholder="Enter your postal code"pattern="[0-9]{6}" required>
+            <input type="submit" id="send" value="Send">
+            <div>By submitting this form, you agree to the privacy and terms of use</div>
+        </form>
+    </div>
+    <h1 style="text-align: center;">Plan your house interior</h1>
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:550px;height:350px;overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" class="jssorl-004-double-tail-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/double-tail-spin.svg" />
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:550px;height:350px;overflow:hidden;">
+            <div>
+                <img data-u="image" src="img/slider1.jpg" />
+                <div style="left:10px;top:310px;width:530px;height:40px;position:absolute;color:#000000;font-size:16px;text-align:center;background-image:linear-gradient(135deg,rgb(246, 230, 180) 0%,rgb(237, 144, 23) 100%);">Complete interior design solutions for your living room. Starting from spectular TV units, Kathedra range of sofas and much more. Book now</div>
+            </div>
+            <div>
+                <img data-u="image" src="img/slider3.jpg" />
+                <div style="left:10px;top:310px;width:530px;height:40px;position:absolute;color:#000000;font-size:16px;line-height:1.2;text-align:center;background-image:linear-gradient(135deg,rgb(246, 230, 180) 0%,rgb(237, 144, 23) 100%);">Cozy, beautiful bedrooms with clever storage designs are a must-have for all urbanites.</div>
+            </div>
+            <div>
+                <img data-u="image" src="img/slider4.jpg" />
+                <div style="left:10px;top:295px;width:530px;height:55px;position:absolute;color:#000000;font-size:16px;line-height:1.2;text-align:center;background-image:linear-gradient(135deg,rgb(246, 230, 180) 0%,rgb(237, 144, 23) 100%);">Our interior designs for your bedroom ensure that you have a serene, beautiful hide-out to escape the world. Create home interior designs for you with</div>
+            </div>
+            <div>
+                <img data-u="image" src="img/slider5.jpg" />
+                <div style="left:10px;top:310px;width:530px;height:40px;position:absolute;color:#000000;font-size:16px;line-height:1.2;text-align:center;background-image:linear-gradient(135deg,rgb(246, 230, 180) 0%,rgb(237, 144, 23) 100%);"><span style="color: rgb(34, 34, 34); font-family: lato, sans-serif;">Your kids will love our vibrant interior designs crafted specially to meet the preferences of the little ones. You can create personalized</span></div>
+            </div>
+        </div><a data-scale="0" href="https://www.jssor.com" style="display:none;position:absolute;">animation software</a>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb031" style="position:absolute;bottom:8px;right:16px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+            <div data-u="prototype" class="i" style="width:5px;height:5px;">
+                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                </svg>
+            </div>
+        </div>
+        <!-- Arrow Navigator -->
+        <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:10px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+            </svg>
+        </div>
+        <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:10px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+            </svg>
+        </div>
+    </div>
+    <script type="text/javascript">jssor_1_slider_init();
+    </script>
+    <div id="container1">
+        <h1>Why House decor?</h1>
+        <div>
+    <img src="https://img.icons8.com/cute-clipart/200/000000/calendar-30.png"/>
+    <p>30 days work or we pay you rent</p></div>
+    <div>
+    <img src="https://img.icons8.com/bubbles/200/000000/home-page.png"/>
+    <p>More than 2,500 houses completed</p></div>
+    <div>
+    <img src="https://img.icons8.com/bubbles/200/000000/conference-call.png"/>
+    <p>More than 300 design experts</p></div>
+    <div>
+    <img src="https://img.icons8.com/bubbles/200/000000/guarantee.png"/>
+    <p>5 years warranty on material</p></div>
+    </div>
+    <div id="container2">
+        <h1>Top professionals for you</h1>
+        <div>
+            <img src="https://img.icons8.com/color/90/000000/interior.png"/>
+            <p><b>Afoss architects</b><br>&#9733 &#9733 &#9733 &#9733 &#9734 <small>12 reviews</small><br>Architects <br>Hyderabad, TS</p>
+        </div>
+        <div>
+            <img src="https://img.icons8.com/color/90/000000/bedroom-interior.png"/>
+            <p><b>BdB interiors</b><br>&#9733 &#9733 &#9733 &#9733 &#9733 <small>20 reviews</small><br>Interior designers <br>Hyderabad, TS</p>
+        </div>
+        <div>
+            <img src="https://img.icons8.com/color/90/000000/interior-accesories.png"/>
+            <p><b>Leehw riahc</b><br>&#9733 &#9733 &#9733 &#9733 &#9734 <small>18 reviews</small><br>Interior architects <br>Hyderabad, TS</p>
+        </div>
+    </div>
+    <div id="container3">
+        <p>When designing the rooms of a home, how does one find the right ideas to create a perfect space? The challenge lies in trying to create the right look by incorporating the perfect colours, materials and design. At house decor, we make it easy by presenting photographs and tips for every room and style, whether it’s a Scandinavian kitchen or a country-style bedroom. With interior design trends changing every year, it’s vital to be aware of the latest materials, colours and styles for decorating rooms. Irrespective of the size or the layout of the room, we present ideas that can be adapted to almost any home. Whether it’s for an ultra-modern apartment in New Delhi or a country-style house in Cochin or Pune, you’re sure to find design ideas from the photographs of rooms on house decor.</p>
+    </div>
+    </div>
+    <div id="living">
+        <div class="sec">
+        <div class="livingpics"data-aos="zoom-in">
+            <img class="img" src="l1.jpg" alt="">
+            <p class="caption">Light & Luxe Modern Home Interiors From China</p>
+            <div class="likes">1.1k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+  <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+</svg>
+        </div>
+    <div class="livingpics"data-aos="zoom-in">
+            <img class="img" src="l2.jpg" alt="">
+            <p class="caption">Tastefully Colourful Mid Century Modern Homes</p>
+            <div class="likes">2.0k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+  <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+</svg>
+        </div>
+    <div class="livingpics"data-aos="zoom-in">
+            <img class="img" src="l3.jpg" alt="">
+            <p class="caption">Sweet And Soothing Pink And Blue Interiors</p>
+            <div class="likes">2.1k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+  <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+</svg>
+        </div>
+        <div class="livingpics"data-aos="zoom-in">
+            <img class="img" src="l4.jpg" alt="">
+            <p class="caption">Small Home Designs Under 50 Square Meters</p>
+            <div class="likes">1.0k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+  <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+</svg>
+        </div>
+        <div class="livingpics"data-aos="zoom-in">
+            <img class="img" src="l5.jpg" alt="">
+            <p class="caption">Book of Inspirational Interiors</p>
+            <div class="likes">3.7k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+  <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+</svg>
+        </div>
+        <div class="livingpics"data-aos="zoom-in">
+            <img class="img" src="l6.jpg" alt="">
+            <p class="caption">Scandinavian Living Room: Ideas & Inspiration</p>
+            <div class="likes">1.7k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+  <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+</svg>
+        </div>
+        <div class="livingpics"data-aos="zoom-in">
+            <img class="img" src="l7.jpg" alt="">
+            <p class="caption">Decorating Minimalist Spaces With Monochrome Melds</p>
+            <div class="likes">2.2k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+  <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+</svg>
+        </div>
+        <div class="livingpics"data-aos="zoom-in">
+            <img class="img" src="l8.jpg" alt="">
+            <p class="caption">Pull Off A Cheerful Colour Clash With Red And Blue Decor</p>
+            <div class="likes">1.3k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+  <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+</svg>
+        </div>
+        <div class="livingpics"data-aos="zoom-in">
+            <img class="img" src="l9.jpg" alt="">
+            <p class="caption">Versatile Black and White Decor</p>
+            <div class="likes">1.6k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+  <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+</svg>
+        </div>
+        <div class="livingpics"data-aos="zoom-in">
+            <img class="img" src="l10.jpg" alt="">
+            <p class="caption">Warming Modern Spaces With Soothing Lighting</p>
+            <div class="likes">2.7k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+  <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+</svg>
+        </div>
+    </div>
+    <div class="ads">Ad close by <b>Google</b></div>
+    </div>
+    <div id="bedroom">
+        <div class="sec">
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="b1.jpg" alt="">
+                <p class="caption">Warming Modern Spaces With Soothing Lighting</p>
+                <div class="likes">1.6k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="b2.jpg" alt="">
+                <p class="caption">Pull Off A Cheerful Colour Clash With Red </p>
+                <div class="likes">2.4k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="b3.jpg" alt="">
+                <p class="caption">Light & Luxe Modern Home Interiors From China</p>
+                <div class="likes">0.8k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="b4.jpg" alt="">
+                <p class="caption">Versatile Black and White Decor</p>
+                <div class="likes">1.1k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="b5.jpg" alt="">
+                <p class="caption">Decorating Minimalist Spaces With Monochrome</p>
+                <div class="likes">1.2k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="b6.jpg" alt="">
+                <p class="caption">Scandinavian Living Room: Ideas & Inspiration</p>
+                <div class="likes">1.8k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="b7.png" alt="">
+                <p class="caption">Book of Inspirational Interiors</p>
+                <div class="likes">2.2k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="b8.jpg" alt="">
+                <p class="caption">Tastefully Colourful Mid Century Modern Homes</p>
+                <div class="likes">3.3k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="b9.jpg" alt="">
+                <p class="caption">Sweet And Soothing Pink And Blue Interiors</p>
+                <div class="likes">2.0k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="b10.jpg" alt="">
+                <p class="caption">Versatile Black and White Decor</p>
+                <div class="likes">1.0k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+        </div>
+        <div class="ads">Ad close by <b>Google</b></div>
+    </div>
+    <div id="kitchen">
+        <div class="sec">
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="k1.jpg" alt="">
+                <p class="caption">Sweet And Soothing Pink And Blue Interiors</p>
+                <div class="likes">2.6k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="k2.jpg" alt="">
+                <p class="caption">Tastefully Colourful Mid Century Modern Homes</p>
+                <div class="likes">3.1k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="k3.jpg" alt="">
+                <p class="caption">Book of Inspirational Interiors</p>
+                <div class="likes">1.1k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="k4.jpg" alt="">
+                <p class="caption">Pull Off A Cheerful Colour Clash With Red</p>
+                <div class="likes">1.7k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="k5.jpg" alt="">
+                <p class="caption">Versatile Black and White Decor</p>
+                <div class="likes">1.9k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="k6.jpg" alt="">
+                <p class="caption">Light & Luxe Modern Home Interiors From China</p>
+                <div class="likes">1.5k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="k7.jpg" alt="">
+                <p class="caption">Decorating Minimalist Spaces With Monochrome</p>
+                <div class="likes">2.6k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="k8.jpg" alt="">
+                <p class="caption">Sweet And Soothing Pink And Blue Interiors</p>
+                <div class="likes">0.6k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="k9.jpg" alt="">
+                <p class="caption">Warming Modern Spaces With Soothing Lighting</p>
+                <div class="likes">1.0k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="k10.jpg" alt="">
+                <p class="caption">Versatile Black and White Decor</p>
+                <div class="likes">2.5k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+        </div>
+        <div class="ads">Ad close by <b>Google</b></div>
+    </div>
+    <div id="toilets">
+        <div class="sec">
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="t1.jpg" alt="">
+                <p class="caption">Warming Modern Spaces With Soothing Lighting</p>
+                <div class="likes">2.3k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="t2.jpg" alt="">
+                <p class="caption">Versatile Black and White Decor</p>
+                <div class="likes">1.6k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="t3.jpg" alt="">
+                <p class="caption">Light & Luxe Modern Home Interiors From China</p>
+                <div class="likes">1.6k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="t4.jpg" alt="">
+                <p class="caption">Sweet And Soothing Pink And Blue Interiors</p>
+                <div class="likes">1.0k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="t5.jpg" alt="">
+                <p class="caption">Pull Off A Cheerful Colour Clash With Red</p>
+                <div class="likes">2.6k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="t6.jpg" alt="">
+                <p class="caption">Decorating Minimalist Spaces With Monochrome</p>
+                <div class="likes">1.3k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="t7.jpg" alt="">
+                <p class="caption">Scandinavian Living Room: Ideas & Inspiration/p>
+                <div class="likes">1.4k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="t8.jpeg" alt="">
+                <p class="caption">Versatile Black and White Decor</p>
+                <div class="likes">2.2k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="t9.jpg" alt="">
+                <p class="caption">Light & Luxe Modern Home Interiors From China</p>
+                <div class="likes">1.6k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="t10.jpg" alt="">
+                <p class="caption">Warming Modern Spaces With Soothing Lighting</p>
+                <div class="likes">1.9k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+        </div>
+        <div class="ads">Ad close by <b>Google</b></div>
+    </div>
+    <div id="child">
+        <div class="sec">
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="c1.jpg" alt="">
+                <p class="caption">Warming Modern Spaces With Soothing Lighting</p>
+                <div class="likes">2.2k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="c2.jpg" alt="">
+                <p class="caption">Sweet And Soothing Pink And Blue Interiors</p>
+                <div class="likes">1.2k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="c3.jpg" alt="">
+                <p class="caption">Light & Luxe Modern Home Interiors From China</p>
+                <div class="likes">2.6k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="c4.jpg" alt="">
+                <p class="caption">Decorating Minimalist Spaces With Monochrome</p>
+                <div class="likes">0.7k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="c5.jpg" alt="">
+                <p class="caption">Scandinavian Living Room: Ideas & Inspiration</p>
+                <div class="likes">0.9k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="c6.jpg" alt="">
+                <p class="caption">Tastefully Colourful Mid Century Modern Homes</p>
+                <div class="likes">1.1k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="c7.jpg" alt="">
+                <p class="caption">Pull Off A Cheerful Colour Clash With Red</p>
+                <div class="likes">2.6k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="c8.jpg" alt="">
+                <p class="caption">wonderful interior design</p>
+                <div class="likes">1.0k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="c9.jpg" alt="">
+                <p class="caption">Versatile Black and White Decor</p>
+                <div class="likes">1.4k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+            <div class="livingpics"data-aos="zoom-in">
+                <img class="img" src="c10.jpg" alt="">
+                <p class="caption">Light & Luxe Modern Home Interiors From China</p>
+                <div class="likes">0.6k likes</div><svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>
+            </div>
+        </div>
+        <div class="ads">Ad close by <b>Google</b></div>
+    </div>
+</div>
+<footer>
+    <div id="back"></div>
+    <div id="box1">
+        <h2>Get in Touch</h2>
+        <h3>Find us at the office</h3>
+        <p>4-102,rennotel buliding <br>,opp to chaitanya shool <br>swarnapuri,miyapur <br>Hyderabad,TS <br>pincode-500040</p>
+        <h3>Give us a ring</h3>
+        <p>+91 1234567890 <br>0987654321 <br>mon-fri 9am-8pm</p>
+        <h3>Email:</h3>
+        <p>care@housedecor.com</p>
+    </div>
+    <div id="box2">
+        <div id="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="50px" height="50px"
+            viewBox="0 0 50 50"
+            style=" fill:#cd6133;"><path d="M12.52,6l10.4,15H3c-0.37,0-0.71-0.21-0.89-0.54c-0.17-0.33-0.14-0.72,0.07-1.03l9-13C11.36,6.16,11.67,6,12,6H12.52z M46.85,19.48l-8-13C38.67,6.18,38.35,6,38,6H14.99l10.39,15H46c0.36,0,0.7-0.2,0.87-0.51C47.05,20.17,47.04,19.78,46.85,19.48z M47,25v19c0,0.55-0.45,1-1,1H26c-0.55,0-1-0.45-1-1V25c0-0.55,0.45-1,1-1h20C46.55,24,47,24.45,47,25z M40,32h-8v6h8V32z M21,24H3 c-0.55,0-1,0.45-1,1v19c0,0.55,0.45,1,1,1h6V32h6v13h6c0.55,0,1-0.45,1-1V25C22,24.45,21.55,24,21,24z"></path></svg>
+            <span>House decor</span></div>
+        <div id="links">
+            <a href="">Help & Support</a>
+            <a href="#intro" onclick="clicked(0)">Contact us</a>
+            <a href="">Terms & Conditions</a>
+            <a href="">Privacy Policy</a>
+        </div>
+        <div id="install">
+            <h2>GET A BETTER EXPERIENCE</h2>
+            <img src="https://img.icons8.com/color/48/000000/google-play.png"/>
+            <img src="https://img.icons8.com/color/48/000000/apple-app-store--v1.png"/><br>
+            <span>Google play</span><span>App store</span><br><br>
+            <span style="margin:20px 0px">House decor and furnishings Pvt.Ltd &#169;2020</span>
+        </div>
+    </div>
+</footer>
+<div id="pop"></div>
+    <script>
+      window.onscroll = function (e) {//navigation bar
+            var h=window.scrollY;
+            var nav=document.getElementById('a');
+            if(h>0){
+                nav.style.boxShadow="0 0 5px #666";
+            }
+            else{
+                nav.style.boxShadow="none";
+            }
+      }  
+      //selecting hearts
+      var heart=document.getElementsByClassName("heart");
+      var pop=document.getElementById("pop");
+      var arr=[]//creating array of all true values
+      for (i=0;i<heart.length;i++)
+      {
+          arr.push(true);
+      }
+      //creating closures
+      for(i=0;i<heart.length;i++){
+        heart[i].addEventListener('click',function(j){
+                return function(){
+                    selected(j);
+                }
+            }(i),true);
+      }
+      function selected(j){//changing color of heart
+          if(arr[j]){
+          heart[j].style.fill="red";
+          pop.innerHTML="Added to favourites"
+          pop.style.visibility="visible";
+          setTimeout(function(){
+              pop.style.visibility="hidden";
+          },200);
+          arr[j]=false;
+          }
+          else{
+            heart[j].style.fill="#fff";
+            pop.innerHTML="Removed from favourites"
+            pop.style.visibility="visible";
+            setTimeout(function(){
+                pop.style.visibility="hidden"
+            },200);
+            arr[j]=true;
+          }
+      }
+      var navl=document.getElementsByClassName("nav");
+      var navbar=document.getElementById('navbar');
+      var m=document.getElementById('m');
+      var close=document.getElementById("close");
+      var fm=document.getElementById("fm");
+      var n=document.getElementById('n');
+      n.addEventListener('click',function(){
+          fm.style.transform="translate(-50%,-150%)";
+      })
+      m.addEventListener('click',function(){
+          navbar.style.transform="translateX(0)";
+      });
+      close.addEventListener('click',function(){
+          navbar.style.transform="translateX(-110%)";
+      });
+      navl[0].style.borderBottom="4px solid #666";
+      for(i=0;i<navl.length;i++){
+        navl[i].addEventListener('click',function(j){
+                return function(){
+                    clicked(j);
+                }
+            }(i),true);
+      }
+      function clicked(j){
+          navl[j].style.borderBottom="4px solid #666";
+          for(i=0;i<navl.length;i++){
+              if(i!=j){
+                  navl[i].style.borderBottom="none";
+              }
+          }
+          if(window.innerWidth<800){
+            navbar.style.transform="translateX(-110%)";
+        }
+      }
+      var s=setInterval(function(){
+          if(window.innerWidth>800){
+              navbar.style.transform="translateX(0)";
+          }
+      });
+      var book=document.getElementById("book");
+
+      book.addEventListener('click',function(){
+          fm.style.transform="translate(-50%,0)";
+      })
+    </script>
+     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+     <script>
+       AOS.init({
+       });
+     </script>
+</body>
+</html>
